@@ -1,0 +1,158 @@
+*{
+    margin: auto;
+    background-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-decoration: none;
+
+}
+.logo img{
+    height: 111px;
+    width:115px;
+    margin-top: -62px;
+    margin-left: 115px;
+}
+
+header h1{
+    margin-top: 26px;
+    margin-left: 37px;
+    height: 79px;
+    width: 229px;
+    border: solid white;
+    border-radius: 50%;
+}
+header ul li a{
+    text-decoration: none;
+    color: white;
+}
+header nav ul{
+    margin-left: 954px;
+    margin-top: -67px;
+}
+
+header ul li{
+    display: inline;
+    padding: 15px;
+    font-size: large;
+    position: sticky;
+  
+   
+
+}
+
+header ul li a:hover{
+    font-size: large;
+    color: rgb(114, 199, 181);
+}
+header nav select{
+    height: 130px;
+    width: 120px;
+    border: none;
+    margin-left: 1167px;
+    margin-top: -96px;
+
+}
+
+header hr{
+    margin-top: 39px;
+}
+.categories{
+    margin-top: 12px;
+    height: 30px;
+    width: 124px;
+    
+}
+.categories option{
+    background-color: white;
+    color: black;
+}
+nav input{
+    background-color: white;
+    height:38px;
+    width: 231px;
+    margin-left: 1553px;
+    border: solid white;
+}
+nav select{
+    height: 41px;
+    width:300px;
+  
+    margin-left: 1401px;
+    padding-right: 30px;
+}
+/* card items */
+.card{
+    box-shadow: 2px 2px white;
+}
+.card .card-body h5{
+    font-weight: 200;
+}
+
+img{
+    border-radius: 5px 5px 5px 5px ;
+    transition: transform 0.5s ease-in-out;
+
+}
+img:hover {
+    transform: scale(1.1);
+  }
+.section_1{
+    margin-top: 100px;
+}
+
+.btn{
+    background-color: white;
+    color:black;
+}
+.card-body .btn:hover{
+    background-color: black;
+    color: white;
+    border:none;
+    font-size: larger;
+}
+
+/* second row */
+.section_1 .second_row{
+    padding-top: 55px;
+}
+/* third_row */
+.section_1 .third_row{
+    padding-top: 55px;
+
+}
+
+/* footer */
+footer .row{
+    margin-left: 20px;
+}
+footer{
+    margin-top:250px;
+}
+footer .row ul a{
+    color: rgb(233, 227, 227);
+    text-decoration: none;
+   
+}
+
+footer ul{
+    list-style-type: none;
+    
+    
+
+}
+footer ul li{
+    padding-top: 5px;
+}
+
+.col-4{
+    margin-bottom: 50px;
+}
+footer .img img{
+    height:63px;
+    width: 58px;
+
+}
+
+.btn{
+    box-shadow: 1px 1px 1px white;
+}
