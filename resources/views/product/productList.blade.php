@@ -11,6 +11,9 @@
 <div class="container mt-5">
 
 @if(session()->has('success')) <p class='text-primary'> {{ session()->get('success') }} </p> @endif
+@if(session()->has('update')) <p> {{session()->get('update')}} </p> @endif
+@if(session()->has('delete')) <p> {{session()->get('delete')}} </p> @endif
+
     <h2>Product List</h2>
     <table class="table">
       <thead>

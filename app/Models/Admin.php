@@ -15,6 +15,7 @@ class Admin extends Model implements Authenticatable
     use HasFactory;
     use AuthenticatableTrait;
 
+    protected $hidden = 'id';
     protected $table = 'admins';
     protected $fillable = [
        
