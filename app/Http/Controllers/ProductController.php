@@ -94,9 +94,5 @@ class ProductController extends Controller
     }
 
 
-    public function userProduct(){
-        $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->get();
-
-        return view('users.home', compact('laptops'));
-    }
+   
 }

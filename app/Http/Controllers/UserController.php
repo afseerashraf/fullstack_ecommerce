@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 
 
@@ -31,5 +33,12 @@ class UserController extends Controller
 
     public function home(){
         return view('users.home');
+    }
+
+    public function userProduct(){
+        $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->get();
+        $mobiles = DB::table('products')->where('productCategory', '=', 'mobile')->get();
+        
+        return view('users.home', compact('laptops', 'mobiles'));
     }
 }

@@ -29,6 +29,7 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/user', 'login')->name('login');
     Route::post('/login', 'userlogin')->name('userlogin');
     Route::get('/home', 'home')->name('home');
+    Route::get('/home','userProduct')->name('userProduct');
 });
 
 Route::controller(ProductController::class)->group(function(){

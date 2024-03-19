@@ -81,6 +81,8 @@ nav select{
     padding-right: 30px;
 }
 /* card items */
+/* new row */
+
 .card{
     box-shadow: 2px 2px white;
 }
@@ -100,6 +102,7 @@ img:hover {
     margin-top: 100px;
 }
 
+
 .btn{
     background-color: white;
     color:black;
@@ -112,6 +115,7 @@ img:hover {
 }
 
 /* second row */
+
 .section_1 .second_row{
     padding-top: 55px;
 }

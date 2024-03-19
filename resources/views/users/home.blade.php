@@ -29,23 +29,26 @@
        
             <section class="section_1" ><!---laptops-->
             
+
                 <div class="row justify-content-center" id="laptops">
-                    <div class="col-4 align-items-start">
+
+                    <div class="col-3 align-items-start">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('users/images/laptop1.jpg')  }}" class="card-img-top" alt="...">
+                <img src="{{ asset('users/images/laptop1.jpg') }}" class="card-img-top" alt="...">
                     <hr>
                     <div class="card-body">
                       <h5 class="card-title">Dell</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <h5>Rs: 350000</h5>
+                      <h5>Rs:  32000</h5>
                       <a href="#" class="btn btn-light">Buy</a>
                       <a href="#" class="btn btn-light">Add to cart</a>
 
                     </div>
                   </div>
+                  
              </div>
 
-             <div class="col-4 align-items-centere">
+            <div class="col-3 align-items-centere">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ asset('users/images/laptop1.jpg') }}" class="card-img-top" alt="...">
                     <hr>
@@ -61,7 +64,7 @@
              </div>
 
 
-             <div class="col-4 align-items-end">
+             <div class="col-3 align-items-end">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ asset('users/images/laptop1.jpg') }}" class="card-img-top" alt="...">
                     <hr>
@@ -75,14 +78,14 @@
                     </div>
                   </div>
              </div>
-             
              </div>
+           
           
 
              <!--Second row----------------------mobiles------->
              <div class="second_row" id="mobile">
              <div class="row justify-content-center">
-                <div class="col-4 align-items-start">
+                <div class="col-3 align-items-start">
             <div class="card" style="width: 18rem;">
                 <img src=" {{ asset('users/images/mobile.jpg') }}" class="card-img-top" alt="...">
                 <hr>
@@ -97,7 +100,7 @@
               </div>
          </div>
 
-         <div class="col-4 align-items-centere">
+         <div class="col-3 align-items-centere">
             <div class="card" style="width: 18rem;">
                 <img src="{{ asset('users/images/mobile.jpg') }}" class="card-img-top" alt="...">
                 <hr>
@@ -113,7 +116,7 @@
          </div>
 
 
-         <div class="col-4 align-items-end">
+         <div class="col-3 align-items-end">
             <div class="card" style="width: 18rem;">
                 <img src=" {{ asset('users/images/mobile.jpg') }}" class="card-img-top" alt="...">
                 <hr>
@@ -136,7 +139,7 @@
 
         <div class="third_row">
             <div class="row justify-content-center">
-               <div class="col-4 align-items-start">
+               <div class="col-3 align-items-start">
            <div class="card" style="width: 18rem;">
                <img src=" {{ asset('users/images/vr.jpg') }}" class="card-img-top" alt="...">
                <hr>
@@ -151,7 +154,7 @@
              </div>
         </div>
 
-        <div class="col-4 align-items-centere">
+        <div class="col-3 align-items-centere">
            <div class="card" style="width: 18rem;">
                <img src="  {{ asset('users/images/vr.jpg') }}" class="card-img-top" alt="...">
                <hr>
@@ -167,7 +170,7 @@
         </div>
 
 
-        <div class="col-4 align-items-end">
+        <div class="col-3 align-items-end">
            <div class="card" style="width: 18rem;">
                <img src=" {{ asset('users/images/vr.jpg') }}" class="card-img-top" alt="...">
                <hr>
