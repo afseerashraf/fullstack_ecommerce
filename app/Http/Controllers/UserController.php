@@ -38,7 +38,8 @@ class UserController extends Controller
     public function userProduct(){
         $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->get();
         $mobiles = DB::table('products')->where('productCategory', '=', 'mobile')->get();
+        $vr = DB::table('products')->where('productCategory', '=', 'vr')->get();
         
-        return view('users.home', compact('laptops', 'mobiles'));
+        return view('users.home', compact('laptops', 'mobiles', 'vr'));
     }
 }

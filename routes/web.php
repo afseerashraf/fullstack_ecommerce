@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::controller(AdminController::class)->group(function(){
-    Route::get('/a', 'viewlogin')->name('viewlogin');
+    Route::get('/admin', 'viewlogin')->name('viewlogin');
     Route::post('/adminlogin', 'adminlogin')->name('adminLogin');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 });
