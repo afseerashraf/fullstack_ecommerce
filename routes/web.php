@@ -19,24 +19,33 @@ Route::get('/', function () {
     return view('admin.dashboard');
 });
 
-Route::controller(AdminController::class)->group(function(){
-    Route::get('/admin', 'viewlogin')->name('viewlogin');
-    Route::post('/adminlogin', 'adminlogin')->name('adminLogin');
-    Route::get('/dashboard', 'dashboard')->name('dashboard');
+Route::prefix('admin')->group(function(){
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/admin', 'viewlogin')->name('viewlogin');
+        Route::post('/adminlogin', 'adminlogin')->name('adminLogin');
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+    });
 });
 
-Route::controller(UserController::class)->group(function(){
-    Route::get('/user', 'login')->name('login');
-    Route::post('/login', 'userlogin')->name('userlogin');
-    Route::get('/home', 'home')->name('home');
-    Route::get('/home','userProduct')->name('userProduct');
+
+Route::prefix('user')->group(function(){
+    Route::controller(UserController::class)->group(function(){
+        Route::get('/user', 'login')->name('login');
+        Route::post('/login', 'userlogin')->name('userlogin');
+        Route::get('/home', 'home')->name('home');
+        Route::get('/home','userProduct')->name('userProduct');
+    });
 });
 
-Route::controller(ProductController::class)->group(function(){
-    Route::post('/addproduct', 'addproduct')->name('addproduct');
-    Route::get('/products', 'products')->name('product.list');
-    Route::get('/update/{id}', 'productupdate')->name('update');
-    Route::post('/updated', 'updated')->name('updated');
-    Route::post('/delete/{id}', 'productdelete')->name('delete');
 
+Route::prefix('product')->group(function(){
+    Route::controller(ProductController::class)->group(function(){
+        Route::post('/addproduct', 'addproduct')->name('addproduct');
+        Route::get('/products', 'products')->name('product.list');
+        Route::get('/update/{id}', 'productupdate')->name('update');
+        Route::post('/updated', 'updated')->name('updated');
+        Route::post('/delete/{id}', 'productdelete')->name('delete');
+    
+    });
 });
+

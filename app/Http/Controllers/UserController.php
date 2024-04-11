@@ -17,7 +17,7 @@ class UserController extends Controller
         return view('users.login');
     }
 
-    public function userlogin(){
+    public function userlogin(){ //user login method
          $user = ['email' => request('email'), 'password' => request('password')];
 
          if(auth()->attempt($user)){
@@ -35,7 +35,7 @@ class UserController extends Controller
         return view('users.home');
     }
 
-    public function userProduct(){
+    public function userProduct(){  // user can read the product 
         $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->get();
         $mobiles = DB::table('products')->where('productCategory', '=', 'mobile')->get();
         $vr = DB::table('products')->where('productCategory', '=', 'vr')->get();

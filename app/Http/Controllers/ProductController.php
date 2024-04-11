@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function addproduct(Request $request){
+    public function addproduct(Request $request){  //admin can only add the product to the database
         $product = new Product();
 
         $product->productName = request('productName');
@@ -46,8 +46,8 @@ class ProductController extends Controller
 
         return view('product.productList', compact('products'));
     }
-//////////////////////////////////////
-    public function productupdate($id){
+
+    public function productupdate($id){ //product update view page
         $product = Crypt::decrypt($id);
         $product = Product::find($product);
         
@@ -57,7 +57,7 @@ class ProductController extends Controller
         return view('product.edit', compact('product'));
     }
 
-    public function updated(Request $request){
+    public function updated(Request $request){ // this function save the updated items in the database
         $product = Crypt::decrypt(request('product_id'));
         $product = Product::find($product);
 

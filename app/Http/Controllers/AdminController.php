@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function viewlogin(){
         return view('admin.adminLogin');
     }
-    public function adminlogin(){
+    public function adminlogin(){ //the function has perform the admin is login
         $admin = ['email' => request('email'), 'password' => request('password')];
 
         if(auth()->guard('admin')->attempt($admin)){

@@ -17,9 +17,5 @@ class Admin extends Model implements Authenticatable
 
     protected $hidden = 'id';
     protected $table = 'admins';
-    protected $fillable = [
-       
-        'email',
-        'password',
-    ];
+    protected $fillable = ['email','password',];
 }

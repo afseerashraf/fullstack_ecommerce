@@ -51,7 +51,7 @@
         @foreach($mobiles as $mobile)
         <div class="col-3 align-items-start">
           <div class="card" style="width: 18rem;">
-            <img src="{{ asset('images/' . $mobile->productImage) }}" class="card-img-top" alt="...">
+            <img src="{{ asset('/images/' . $mobile->productImage) }}" class="card-img-top" alt="...">
             <hr>
             <div class="card-body">
               <h5 class="card-title">{{$mobile->productName}}</h5>
