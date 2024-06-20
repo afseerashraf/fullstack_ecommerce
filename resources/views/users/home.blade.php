@@ -26,6 +26,7 @@
 
     <div class="row justify-content-center" id="laptops">
       @foreach($laptops as $laptop)
+      
       <div class="col-3 align-items-start">
 
         <div class="card" style="width: 18rem;">
@@ -36,7 +37,7 @@
             <h5>Rs:: {{$laptop->productPrice}}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a href="#" class="btn btn-light">Buy</a>
-            <a href="#" class="btn btn-light">Add to cart</a>
+            <a href="{{route('addtoCart', encrypt($laptop->id))}}" class="btn btn-light">Add to cart</a>
           </div>
         </div>
       </div>
@@ -58,7 +59,7 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <h5>Rs: {{$mobile->productPrice}}</h5>
               <a href="#" class="btn btn-light">Buy</a>
-              <a href="#" class="btn btn-light">Add to cart</a>
+              <a href="{{route('addtoCart', encrypt($mobile->id))}}" class="btn btn-light">Add to cart</a>
 
             </div>
           </div>
@@ -80,7 +81,7 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <h5>Rs: {{$vr->productPrice}}</h5>
               <a href="#" class="btn btn-light">Buy</a>
-              <a href="#" class="btn btn-light">Add to cart</a>
+              <a href="{{route('addtoCart', encrypt($vr->id))}}" class="btn btn-light">Add to cart</a>
 
             </div>
           </div>

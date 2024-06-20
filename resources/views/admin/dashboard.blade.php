@@ -1,4 +1,4 @@
-@extends('users.header')
+@extends('layout')
 
 @section('title') dashboard @endsection
 @section('style')

@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+    public function createproduct(){
+        return view('admin.dashboard');
+    }
     public function addproduct(Request $request){  //admin can only add the product to the database
         $product = new Product();
 
@@ -42,7 +46,7 @@ class ProductController extends Controller
 
 
     public function products(){
-        $products = Product::latest()->paginate(10);
+        $products = Product::latest()->paginate(5);
 
         return view('product.productList', compact('products'));
     }
@@ -91,6 +95,14 @@ class ProductController extends Controller
 
         return redirect()->route('product.list')->with('delete', 'succsefully deleted');
 
+    }
+    public function ProductBuy(Request $request, $id){
+        $itmID = Crypt::decrypt($id);
+        $item = Product::find($itmID);
+
+        return $item;
+
+        
     }
 
 

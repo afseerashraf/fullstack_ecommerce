@@ -11,6 +11,8 @@ class Product extends Model
     
    
     protected $table = 'products';
-
+    protected $primarykey = 'id';
     protected $fillable = ['productName','productPrice', 'productCategory', 'productImage'];
+
+    
 }

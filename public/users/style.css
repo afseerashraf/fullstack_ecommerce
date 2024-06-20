@@ -1,6 +1,6 @@
 *{
     margin: auto;
-    background-color: black;
+    background-color: rgb(39, 37, 37);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     text-decoration: none;
@@ -18,7 +18,7 @@ header h1{
     margin-left: 37px;
     height: 79px;
     width: 229px;
-    border: solid white;
+    border: solid rgb(255, 247, 247);
     border-radius: 50%;
 }
 header ul li a{

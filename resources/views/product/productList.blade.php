@@ -1,4 +1,4 @@
-@extends('users.header')
+@extends('layout')
 
 @section('title') products @endsection
 @section('style')
@@ -15,6 +15,7 @@
   @if(session()->has('delete')) <p> {{session()->get('delete')}} </p> @endif
 
   <h2>Product List</h2>
+  <a href="{{ route('createproduct') }}" class="btn btn-outline-success">add new</a>
   <table class="table">
     <thead>
       <tr>

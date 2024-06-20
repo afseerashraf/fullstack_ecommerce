@@ -34,17 +34,20 @@ Route::prefix('user')->group(function(){
         Route::post('/login', 'userlogin')->name('userlogin');
         Route::get('/home', 'home')->name('home');
         Route::get('/home','userProduct')->name('userProduct');
+        Route::get('/cart/{id}', 'addtoCart')->name('addtoCart');
     });
 });
 
 
 Route::prefix('product')->group(function(){
     Route::controller(ProductController::class)->group(function(){
+        Route::get('createproduct', 'createproduct')->name('createproduct');
         Route::post('/addproduct', 'addproduct')->name('addproduct');
         Route::get('/products', 'products')->name('product.list');
         Route::get('/update/{id}', 'productupdate')->name('update');
         Route::post('/updated', 'updated')->name('updated');
         Route::post('/delete/{id}', 'productdelete')->name('delete');
+        Route::get('/buy/{id}', 'ProductBuy')->name('ProductBuy');
     
     });
 });
