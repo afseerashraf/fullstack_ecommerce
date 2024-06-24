@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\userCreateMail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Mail;
 
 
 
@@ -38,6 +39,7 @@ class ProductController extends Controller
         }
 
         $product->save();
+        Mail::to('hello@example.com')->send(new userCreateMail($product));
 
         return redirect()->route('product.list')->with('success', 'Product added successfully.');
 
