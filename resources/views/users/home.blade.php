@@ -17,6 +17,11 @@
         <option value="mobile"><a href="#mobile">Mobile</a> </option>
         <option value="laptop"><a href="#laptops">Laptops</a></option>
       </select>
+      <div class="serch">
+      <form action="" method="get">
+        <input type="search" name="items"><button>Search</button>
+      </form>
+      </div>
     </nav>
     <hr>
   </header>
@@ -30,8 +35,8 @@
       <div class="col-3 align-items-start">
 
         <div class="card" style="width: 18rem;">
-          <img src="{{ asset('images/' . $laptop->productImage) }}" class="card-img-top" alt="...">
-          <hr>
+        <img src="{{ asset('storage/' . $laptop->productImage) }}" alt="Product Image">
+        <hr>
           <div class="card-body">
             <h5 class="card-title">{{$laptop->productName}}</h5>
             <h5>Rs:: {{$laptop->productPrice}}</h5>
@@ -52,8 +57,8 @@
         @foreach($mobiles as $mobile)
         <div class="col-3 align-items-start">
           <div class="card" style="width: 18rem;">
-            <img src="{{ asset('/images/' . $mobile->productImage) }}" class="card-img-top" alt="...">
-            <hr>
+          <img src="{{ asset('storage/' . $mobile->productImage) }}" alt="Product Image">
+          <hr>
             <div class="card-body">
               <h5 class="card-title">{{$mobile->productName}}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -72,10 +77,11 @@
     <div class="third_row">
       <div class="row justify-content-center">
         @foreach($vr as $vr)
+        
         <div class="col-3 align-items-start">
           <div class="card" style="width: 18rem;">
-            <img src="{{ asset('images/' . $vr->productImage) }}" class="card-img-top" alt="...">
-            <hr>
+          <img src="{{ asset('storage/' . $vr->productImage) }}" alt="Product Image">
+          <hr>
             <div class="card-body">
               <h5 class="card-title">{{$vr->productName}}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -96,38 +102,39 @@
 
 
   <footer>
-    <hr>
-    <div class="row">
-      <div class="col-4 align-items-start">
-        <h3>INFORMATION</h3>
-        <ul>
-          <li><a href="#"></a>Pricing</li>
-          <li><a href="#"></a>Abount us</li>
-          <li><a href="#"></a>Jobs</li>
-          <li><a href="#"></a>Sell your content</li>
-        </ul>
-      </div>
-
-      <div class="col-4 align-items-centere">
-        <h3>SUPPORT</h3>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">shipping</a></li>
-          <li><a href="#">returns</a></li>
-          <li><a href="#">order status</a></li>
-          <li><a href="#">payment options</a></li>
-        </ul>
-      </div>
-      <div class="img col-4 align-items-end" id="contact">
-        <h3>Follow us</h3>
-        <ul>
-          <li><a href="#"><img src="{{ asset('users/images/instagrmme.jpg') }}" alt="instagramm"></a></li>
-          <li><a href="#"><img src=" {{ asset('users/images/X.jpg') }}" alt="X"></a></li>
-        </ul>
-      </div>
+  <hr>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>INFORMATION</h3>
+      <ul>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Sell Your Content</a></li>
+      </ul>
     </div>
 
-  </footer>
+    <div class="footer-section">
+      <h3>SUPPORT</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Order Status</a></li>
+        <li><a href="#">Payment Options</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-icons">
+        <li><a href="#"><img src="{{ asset('users/images/instagrmme.jpg') }}" alt="Instagram"></a></li>
+        <li><a href="#"><img src="{{ asset('users/images/X.jpg') }}" alt="Twitter"></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
 
 
 </div>

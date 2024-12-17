@@ -1,21 +1,22 @@
-<!-- @extends('users.header')
-@section('title') adminlogin @endsection
-@section('style')
-<link rel="stylesheet" href="{{ asset('admin/style.css') }}">
-@endsection
 
+@extends('Layout.layout')
+@section('title')Admin Login @endsection
+<style>
+   .continer{
+      width:300px;
+      height:300px;
+      margin-left:200px;
+      margin-top:100px;
+   }
+</style>
 @section('content')
-
-
 <div class="continer">
-   <div class="col-md-9">
-      <div class="box">
 
+<form action=" {{ route('admin.Login') }} " method="post" class="form-control">
 
-         <form action=" {{ route('adminLogin') }} " method="post" class="frm">
 
             <h3>Admin Login</h3>
-
+<a href="{{ route('admin.register') }}">Do not have Account</a>
 
             @csrf
 
@@ -23,41 +24,14 @@
             <span class="text-danger"> {{ session()->get('message') }} </span>
             @endif <br>
             <label for="email">Email</label><br>
-            <input type="email" name="email"><br>
-
+            <input class="form-control" type="email" name="email" placeholder="Email"><br>
+            @error('email') <div class="alert alert-danger">{{ $message }}</div> @enderror
             <label for="password">Password</label><br>
-            <input type="password" name="password">
-
-            <button class="btn">Login</button>
+            <input class="form-control" type="password" name="password" placeholder="password"><br>
+            @error('password') <div class="alert alert-danger">{{ $message }}</div> @enderror
+            <button class="btn btn-outline-primary">Login</button>
 
          </form>
-      </div>
-   </div>
-
-
-
+         
 </div>
-
-@endsection -->
-@extends('layout')
-@section('content')
-<form action=" {{ route('adminLogin') }} " method="post" class="frm">
-
-            <h3>Admin Login</h3>
-
-
-            @csrf
-
-            @if(session()->has('message'))
-            <span class="text-danger"> {{ session()->get('message') }} </span>
-            @endif <br>
-            <label for="email">Email</label><br>
-            <input type="email" name="email"><br>
-
-            <label for="password">Password</label><br>
-            <input type="password" name="password">
-
-            <button class="btn">Login</button>
-
-         </form>
-@stop
+@endsection

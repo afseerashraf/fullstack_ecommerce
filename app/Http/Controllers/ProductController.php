@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-
+use App\Jobs\CrateProductMail;
 
 
 class ProductController extends Controller
 {
 
     public function createproduct(){
-        return view('admin.dashboard');
+        return view('product.create');
     }
     public function addproduct(Request $request){  //admin can only add the product to the database
         $product = new Product();
@@ -25,21 +25,16 @@ class ProductController extends Controller
         $product->productCategory = request('productCategory');
         
         if ($request->hasFile('productImage')) {
-            // Get the uploaded file
             $image = $request->file('productImage');
-
-            // Set a unique name for the image
-            $imageName = time() . '_' . $image->getClientOriginalName();
-
-            // Move the uploaded file to the storage directory
-            $image->move(public_path('images'), $imageName);
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('public/images/products', $imageName);
 
             // Save the image path to the database
-            $product->productImage = 'images/' . $imageName;
+            $product->productImage = $product->productName . $imageName;
         }
 
         $product->save();
-        Mail::to('hello@example.com')->send(new userCreateMail($product));
+        CrateProductMail::dispatch($product);
 
         return redirect()->route('product.list')->with('success', 'Product added successfully.');
 
@@ -88,7 +83,6 @@ class ProductController extends Controller
 
         return redirect()->route('product.list')->with('update', 'succesfully updated');
     }
-//////////////////////////////////////////
     public function productdelete($id){
         $productId = Crypt::decrypt($id);
         $product = Product::find($productId);
@@ -105,6 +99,16 @@ class ProductController extends Controller
         return $item;
 
         
+    }
+
+    public function mobiles(){
+        $mobiles = Product::where('productCategory', '=', 'mobile')->paginate(5);
+        return view('product.mobiles', compact('mobiles'));
+    }
+
+    public function laptops(){
+        $laptops = Product::where('productCategory', '=', 'laptop')->paginate(5);
+        return view('product.laptops', compact('laptops'));
     }
 
 

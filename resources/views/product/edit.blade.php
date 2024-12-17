@@ -16,7 +16,7 @@
       Insert Product
     </div>
     <div class="card-body">
-      <form action=" {{ route('updated') }} " method="post" enctype="multipart/form-data">
+      <form action=" {{ route('product.updated') }} " method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name='product_id' value="{{encrypt($product->id)}}">
         <div class="form-group">

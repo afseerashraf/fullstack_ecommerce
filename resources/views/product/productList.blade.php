@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.dashboard')
 
 @section('title') products @endsection
 @section('style')
@@ -15,7 +15,7 @@
   @if(session()->has('delete')) <p> {{session()->get('delete')}} </p> @endif
 
   <h2>Product List</h2>
-  <a href="{{ route('createproduct') }}" class="btn btn-outline-success">add new</a>
+  <a href="{{ route('product.createproduct') }}" class="btn btn-outline-success">add new</a>
   <table class="table">
     <thead>
       <tr>
@@ -44,8 +44,8 @@
           @endif
         </td>
 
-        <td> <button class="btn btn-outline-success"> <a href=" {{route('update', encrypt($product->id))}} ">Update</a> </button> </td>
-        <td> <button class="btn btn-outline-danger"> <a href=" {{route('delete', encrypt($product->id))}} "></a>Delete </td>
+        <td> <button class="btn btn-outline-success"> <a href=" {{route('product.update', encrypt($product->id))}} ">Update</a> </button> </td>
+        <td> <button class="btn btn-outline-success"> <a href=" {{route('product.delete', encrypt($product->id))}} ">Delete</a> </button> </td>
       </tr>
       @endforeach
     </tbody>

@@ -38,8 +38,8 @@ class UserController extends Controller
     }
 
     public function userProduct(){  // user can read the product 
-        $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->get();
-        $mobiles = DB::table('products')->where('productCategory', '=', 'mobile')->get();
+        $laptops = DB::table('products')->where('productCategory', '=', 'laptop')->take(4)->get();
+        $mobiles = DB::table('products')->where('productCategory', '=', 'mobile')->take(4)->get();
         $vr = DB::table('products')->where('productCategory', '=', 'vr')->get();
         
         return view('users.home', compact('laptops', 'mobiles', 'vr'));
